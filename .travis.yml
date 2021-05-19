@@ -1,0 +1,9 @@
+language: node_js
+node_js: [ 14 ]
+jobs:
+  include:
+    - name: 'Install Dependencies'
+      script: yarn
+    - name: 'Publish to Chromatic'
+      script: npx chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
+
